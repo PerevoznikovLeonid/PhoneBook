@@ -137,7 +137,6 @@ class ContactRepository(
         }
     }
 
-    // 6. Удаление
     suspend fun deleteContact(contactId: Long) {
         val contact = contactDao.getById(contactId) ?: return
         val phones = phoneNumberDao.getForContact(contactId).first()
